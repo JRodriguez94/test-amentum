@@ -1,0 +1,24 @@
+<form [formGroup]="registerForm" (ngSubmit)="sendRegist($event)">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp" placeholder="Ingresa tu email">
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email es requerido</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" formControlName="password" placeholder="Ingresa una contraseña">
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Constraseña es requerida</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Confirme Password</label>
+      <input type="password" class="form-control" formControlName="password" placeholder="Ingresa una contraseña">
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Confirmacion de constraseña es requerida</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
